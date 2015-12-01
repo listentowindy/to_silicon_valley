@@ -31,18 +31,15 @@ int MaxIndexDistance(int arr [], int n)
 	int max_index_distance = 0;
 	int i = n-1, j = n-1;
 	while (i >= 0) {
-		if (in_desc_seq[i] == false) {
+		while (in_desc_seq[i] == false) { //in_desc_seq[0] = true, so it don't need to check i >= 0
 			i--;
-			continue;
 		}
 
 		while (arr[j] <= arr[i] && j > i) {
 			j--;
 		}
 
-		if (j - i > max_index_distance) {
-			max_index_distance = j - i;
-		}
+		max_index_distance = max(j-i, max_index_distance);
 		i--;
 	}
 

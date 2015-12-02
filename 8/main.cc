@@ -28,6 +28,7 @@ struct Interval
   }
 };
 
+//element in vec is sorted and has not overlap
 int InsertInterval(const vector<Interval>& vec, Interval& insert, vector<Interval>& new_vec)
 {
   new_vec.clear();

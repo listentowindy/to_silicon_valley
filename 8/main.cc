@@ -37,7 +37,7 @@ int InsertInterval(const vector<Interval>& vec, Interval& insert, vector<Interva
   }
 
   bool has_insert = false;
-  for (int i = 0; i < vec.size(); i++) {
+  for (size_t i = 0; i < vec.size(); i++) {
     if (has_insert == true) {
       new_vec.push_back(vec[i]);
     } else {
@@ -58,17 +58,17 @@ int InsertInterval(const vector<Interval>& vec, Interval& insert, vector<Interva
   return 0;
 }
 
-int test(const vector<Interval>& vec, Interval& insert, vector<Interval>& result)
+void test(const vector<Interval>& vec, Interval& insert, vector<Interval>& result)
 {
   cout << "input:" << endl;
-  for (int i = 0; i < vec.size(); i++) {
+  for (size_t i = 0; i < vec.size(); i++) {
     cout << vec[i].start << ", " << vec[i].end << endl;
   }
   cout << "insert: " << insert.start << ", " << insert.end << endl;
 
   InsertInterval(vec, insert, result);
   cout << "output:" << endl;
-  for (int i = 0; i < result.size(); i++) {
+  for (size_t i = 0; i < result.size(); i++) {
     cout << result[i].start << ", " << result[i].end << endl;
   }
   cout << endl;

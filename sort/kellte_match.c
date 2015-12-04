@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 #include "mylib.h"
 
 typedef struct kettle{
@@ -11,7 +11,7 @@ void blue_red_quick_sort( Kettle *blue, Kettle *red, int p, int r);
 void kettle_swap(Kettle *a, Kettle *b);
 void printf_arr(int *a, int len);
 
-main(){
+int main() {
     int a[10] = {1,2,3,4,5,6,7,8,9,10};
     Kettle red[10], blue[10];
     int i;
@@ -32,8 +32,7 @@ main(){
     for(i=0; i<10; i++){
         printf("red[%d] = blue[%d] = %d\n", red[i].i, blue[i].i, red[i].volume);
     } 
-    system("pause");
-    exit(0);
+    return 0;
 }
 
 void blue_red_quick_sort( Kettle *red, Kettle *blue, int p, int r){
@@ -46,7 +45,7 @@ void blue_red_quick_sort( Kettle *red, Kettle *blue, int p, int r){
 }
 
 int partition(Kettle *red, Kettle *blue, int p, int r){
-    int red_key_index = random(p, r+1);//作为红色水壶划分key的下标 
+    int red_key_index = random_val(p, r+1);//作为红色水壶划分key的下标 
     int blue_key_index;//作为蓝色水壶划分key的下标 
     int blue_key = red[red_key_index].volume; //蓝色水壶的划分key ，从红色中随机选取的分隔元素,做蓝色的分隔元素
     int red_key;//红色水壶的划分key 

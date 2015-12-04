@@ -16,7 +16,7 @@ void swap(int *a, int *b){
 
 //ʹ?ñ?????ǰ?????ȵ??? srand((int)time(0)); ??????????????
 //???? [a,b) ֮?????????? 
-int random( int a, int b){
+int random_val(int a, int b){
      assert( a <= b);
      return ( rand()%(b-a) + a );
 }
@@ -25,7 +25,7 @@ int random( int a, int b){
 void Shuffle(int *arr, int len){
     int i;
     for(i=0; i<len; i++){
-        swap( arr+i, arr+random(i,len) );
+        swap(arr+i, arr + random_val(i,len) );
     }
 }
 
@@ -90,7 +90,6 @@ void merge(int *arr, int start, int medium, int end){
 //?ϲ????? 
 void merge_sort(int *arr, int start, int end){
 	int medium;
-	int i=0;
 	
 	if( start < end ){
 		medium = (start + end)/2;
@@ -183,7 +182,7 @@ void QuickSort(int *arr, int p, int r){
 
 /* 
 int random_partition(int *arr, int p, int r){
-    int i = random(p, r+1);
+    int i = random_val(p, r+1);
     swap(arr+i, arr+r);
     return partion(arr, p, r);
 }

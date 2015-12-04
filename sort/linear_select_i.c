@@ -2,7 +2,7 @@
 #include "mylib.h"
 
 int RandomPartition(int *arr, int p, int r){
-    int i = random(p, r+1);
+    int i = random_val(p, r+1);
     swap(arr+i, arr+r);
     return partion(arr, p, r);
 }

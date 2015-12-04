@@ -4,23 +4,24 @@ env = Environment(tools=['default', 'packaging'])
 env.Append(CCFLAGS = Split('-g -ggdb -Wall -Wextra -DBTDEBUG'))
 #env.Append(CCFLAGS = Split('-g -O2 -Wall -Wextra -DNDEBUG'))
 
-root = './'
 #set include path
 comroot='../../../com/'
-cpppath=['./',
+cpppath=[
+    './',
     comroot+'thirdparty/gflags-2.0/include',
     comroot+'thirdparty/glog-0.3.3/include',
     comroot+'thirdparty/gtest-1.6.0/include',
-    ];
+];
 env.Append(CPPPATH = cpppath)
 
 #set libpath
-libpath=['./',
+libpath=[
+    './',
     comroot+'thirdparty/gflags-2.0/lib/',
     comroot+'thirdparty/glog-0.3.3/lib/',
     comroot+'thirdparty/gtest-1.6.0/lib/',
     comroot+'thirdparty/boost_1.52.0/lib/',
-    ];
+];
 env.Append(LIBPATH = libpath)
 
 #set libs
